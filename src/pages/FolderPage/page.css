@@ -1,0 +1,21 @@
+.Folderinnerc{
+    margin: 10px;
+    border-bottom: 1px solid rgba(138, 121, 121, 0.552);
+    
+}
+.Fileinnerc{
+    margin: 10px;
+    
+}
+.containerh{
+    font-size:1.2em;
+
+}
+.filecard{
+    display: flex;
+    justify-content: space-around;
+    width: 150px;
+    border: aquamarine 2px solid;
+    border-radius: 10px;
+    margin: 10px;
+}
