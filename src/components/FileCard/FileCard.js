@@ -13,13 +13,13 @@ export default function FileCard({data, type}) {
     data.slice(0,data.lastIndexOf('.'));
     
     const onClick = () => {
-        if (type ==="Folders") setCurrentFolder(currentFolder+"/"+data)   //bug when overclicking
+        if (type ==="Folders") setCurrentFolder(currentFolder+"/"+data)
         // else                                                           ////////
 
     }
   return (
     <div className='filecard' onDoubleClick={onClick}>
-        <div> {fileName} </div>
+        <div className='filename' > {fileName} </div>
         <div><TypeImage type={ftype} /></div>
     </div>
   )

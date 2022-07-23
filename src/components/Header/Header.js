@@ -21,7 +21,8 @@ export default function Header() {
 
 
   return (
-    <header>My storage: /
+    <header>
+      <div className='headertext'>My storage: /</div>
         {arrayOfcurrentFolder?.map((v,i)=>{
             return (
               <HeaderLink key={i} >

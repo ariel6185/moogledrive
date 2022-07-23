@@ -1,12 +1,16 @@
 import React, {useContext} from 'react'
+import { alertPopupContext } from '../../contexts/alertPopupContext';
 import { currentFolderContext } from '../../contexts/currentFolderContext';
 import { renderContext } from '../../contexts/renderContext';
+import ('./CreateFolderPopup.css')
 
 
 export default function CreateFolderPopup({setMe}) {
     
     const [currentFolder, setCurrentFolder] = useContext(currentFolderContext)
     const [newRender, setNewRender] = useContext(renderContext)
+    const [message, setMessage] = useContext(alertPopupContext)
+
 
     const onSubmit = (e) => {
 
@@ -21,20 +25,31 @@ export default function CreateFolderPopup({setMe}) {
         .then((res) =>res.text())
         .then((data) =>{
             if (data==="Folder already exist" )  ///fix res.status
-            alert(data)
+            setMessage(data)
             else {setNewRender(newRender+1)}
         });
         
         setMe('')
     }
+        
 
   return (
     <div className='fpopup'>
-        <form onSubmit={onSubmit}>
+        <div className='popup-container'>
+        
+        <form onSubmit={onSubmit} className='popup-innerContainer' >
+
             <label htmlFor='folder'>Folder name: </label>
             <input name='folder' placeholder="New Folder" pattern='^[^.]*$' />
-            <button>Create Folder</button>
+
+            <div className='popupButtonFlex'>
+            <button onClick={()=>setMe('') }>Cancel</button>
+            <button type='submit'>Create Folder</button>
+            </div>
+
         </form>
+        
+        </div>
     </div>
   )
 }

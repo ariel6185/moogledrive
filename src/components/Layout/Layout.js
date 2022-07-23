@@ -1,39 +1,40 @@
 import React, {useState} from 'react'
-import CreateFolderPopup from '../CreateFolderPopup/CreateFolderPopup'
 import EditPopup from '../EditPopup/EditPopup'
 import Header from '../Header/Header'
 import Main from '../Main/Main'
 import Nav from '../Nav/Nav'
 import './Layout.css'
-import { createFolderPopupContext } from '../../contexts/createFolderPopupContext'
+import { alertPopupContext } from '../../contexts/alertPopupContext'
 import { currentFolderContext } from '../../contexts/currentFolderContext'
 import { renderContext } from '../../contexts/renderContext'
+import CornerCss from '../CornerCss/CornerCss'
+import GenPopup from '../GenPopup/GenPopup'
 
 export default function Layout() {
 
-  const [isFolderPopup, setisFolderPopup] = useState()
+  const [isAlertPopup, setisAlertPopup] = useState('')
   const [currentFolder, setCurrentFolder] = useState("root")
   const newRender = useState(0)
 
   return (
     <>
     <currentFolderContext.Provider value={[currentFolder, setCurrentFolder]}>
-    <createFolderPopupContext.Provider value={setisFolderPopup}>
+    <alertPopupContext.Provider value={[isAlertPopup, setisAlertPopup]}>
     <renderContext.Provider value={newRender} >
 
-
     <Header />
+
     <div className="layout">
     <Main />
     <Nav />
     </div>
 
-    {isFolderPopup && <CreateFolderPopup setMe={setisFolderPopup} />}
-
+    {isAlertPopup && <GenPopup message={isAlertPopup} setMe={setisAlertPopup} />}
     <EditPopup />
+    <CornerCss />
     
     </renderContext.Provider>
-    </createFolderPopupContext.Provider>
+    </alertPopupContext.Provider>
     </currentFolderContext.Provider>
    
     </>

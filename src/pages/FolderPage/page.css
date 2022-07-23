@@ -1,21 +1,45 @@
 .Folderinnerc{
+    display: flex;
+    flex-wrap: wrap;
     margin: 10px;
     border-bottom: 1px solid rgba(138, 121, 121, 0.552);
     
 }
 .Fileinnerc{
+    display: flex;
+    flex-wrap: wrap;
     margin: 10px;
     
 }
 .containerh{
     font-size:1.2em;
-
+    font-weight: 600
+    
 }
 .filecard{
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    align-items: center;
     width: 150px;
+    min-width: 150px;
     border: aquamarine 2px solid;
-    border-radius: 10px;
+    border-radius: 30px;
     margin: 10px;
+    padding: 5px;
+    background:radial-gradient( rgb(180, 250, 230),rgba(250, 235, 215, 0.3));
+    transition: all 100ms ease;
+    
+    
+}
+.filecard:hover{
+    transition: all 100ms ;
+    transform:scale(1.03);
+    width: fit-content;
+    font-weight: 600;
+}
+.filename{
+    width: 80%;
+    text-align: center;
+    overflow: hidden;
+    text-overflow:ellipsis;
 }

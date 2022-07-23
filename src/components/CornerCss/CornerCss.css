@@ -1,0 +1,46 @@
+.csscurverOver{
+    position: absolute;
+    /* z-index: 1; */
+    top: 0;
+    right: 90px;
+    background: linear-gradient(0deg, rgba(180, 255, 235, 0.4),rgba(253, 243, 229, 0.9));
+    height: 100px;
+    width: 178.109px;
+}
+.cornerCss{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    background:linear-gradient(45deg,rgba(238, 255, 249, 0.7),rgba(250, 235, 215, 0.7));
+    height: 70px;
+    width: 150px;
+}
+.csscurveCornerOver{ 
+    position: absolute;
+    z-index: 3;
+    top: 18px;
+    right: 91px;
+    background:linear-gradient(45deg, rgba(209, 245, 225,0.8),rgba(238, 255, 249, 0.5),rgba(250, 235, 215, 0.5));
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.csscurveCorner {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    height: 100px;
+    width: 178.109px;
+    background:linear-gradient(45deg, rgb(209, 245, 225),rgba(238, 255, 249, 1),rgba(250, 235, 215, 1));
+    border-top-left-radius:  50px;
+}
+.cssNavOver{
+    position: absolute;
+    top: 129px;
+    right: 0;
+    height: 50px;
+    width: 178.109px;
+    background: linear-gradient(to right, rgba(215, 250, 243,0.7),rgba(250, 235, 215, 0.3));
+    
+}

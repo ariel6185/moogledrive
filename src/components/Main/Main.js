@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Fake from "../../pages/Fake";
 import FolderPage from "../../pages/FolderPage/FolderPage";
-// import './Main.css'
 
 export default function Main() {
     return (
@@ -10,8 +9,7 @@ export default function Main() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<FolderPage />} />
-                    <Route path="/home" element={<FolderPage />} />
-                    <Route path="/fake" element={<Fake />} />
+                    <Route path="/my-storage" element={<FolderPage />} />
                 </Routes>
             </BrowserRouter>
         </main>

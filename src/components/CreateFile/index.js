@@ -1,4 +1,5 @@
 import React, {useRef, useEffect, useContext} from 'react'
+import { alertPopupContext } from '../../contexts/alertPopupContext'
 import { currentFolderContext } from '../../contexts/currentFolderContext'
 import { renderContext } from '../../contexts/renderContext'
 import './CreateFile.css'
@@ -10,6 +11,7 @@ export default function CreateFile({setState}) {    //bug when cancelled
     const inputRef = useRef()
     const [newRender, setNewRender] = useContext(renderContext)
     const [currentFolder, setCurrentFolder] = useContext(currentFolderContext)
+    const [message, setMessage] = useContext(alertPopupContext)
 
     useEffect(() =>{
         inputRef.current.click();
@@ -25,13 +27,13 @@ export default function CreateFile({setState}) {    //bug when cancelled
     const validations = (files)=>{
         
         return (!files[0])? 
-             alert("no file"):
+             setMessage("no file"):
 
              (files[0].size >1500000)? 
-             alert("File size must be under 1.5Mb"):
+             setMessage("File size must be under 1.5Mb"):
 
              (!validFileType(files[0].name))?        
-             alert(`only allows file types of :
+             setMessage(`only allows file types of :
               txt js css json doc docx xls wav psd 
               png jpg jpge mp3 mp4 php pdf gif
              `):
@@ -57,7 +59,7 @@ export default function CreateFile({setState}) {    //bug when cancelled
              })
             //  .then((res) => res.json())
              .then(() => setNewRender(newRender+1))
-            //  alert(JSON.stringify(`${res.message}, status: ${res.status}`));
+            //  setMessage(JSON.stringify(`${res.message}, status: ${res.status}`));
         }
              setState('')
     };

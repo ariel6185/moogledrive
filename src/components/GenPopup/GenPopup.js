@@ -1,7 +1,17 @@
 import React from 'react'
 
-export default function GenPopup() {
+export default function GenPopup({ message, setMe }) {
+
   return (
-    <div>GenPopup</div>
+    <div className='fpopup' >
+        <div className='popup-container'>
+        <div className='popup-innerContainer' >
+          
+            <p><b>{message}</b></p>
+            <button onClick={()=>setMe('') }>OK</button>
+        
+        </div>
+        </div>
+    </div>
   )
 }

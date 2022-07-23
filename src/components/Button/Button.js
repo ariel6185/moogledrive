@@ -1,36 +1,26 @@
 import React from 'react'
-import { useContext, useState } from 'react'
-import { createFolderPopupContext } from '../../contexts/createFolderPopupContext'
-// import {useDropzone} from 'react-dropzone';
+import { useState } from 'react'
 import CreateFile from '../CreateFile';
+import CreateFolderPopup from '../CreateFolderPopup/CreateFolderPopup';
 
 
 export default function Button({txt}) {
-
-    const setisFolderPopup = useContext(createFolderPopupContext)
     
     const [x,setX]=useState('')
-    // const {open} = useDropzone()
-    function importD() {
-        const input = document.createElement('input');
-        input.type = 'file';
-        input.onchange = _this => {
-                  let files =   Array.from(input.files);
-                  console.log(files);
-              };
-        input.click();
-      }
 
     const clicked =()=>{
         
-        if(txt === "Add new Folder" ) setisFolderPopup(true)
-        if (txt === "Add new File") setX(true)
+        if(txt === "Add new Folder" ) setX("folder")
+        if (txt === "Add new File") setX("file")
     }
     
     return (
-        <div>
-        {x&&<CreateFile setState={setX}/>}
+        <>
+
+        { x==="file" && <CreateFile setState={setX}/>}
+        { x==="folder" && <CreateFolderPopup setMe={setX} />}
+
         <button onClick={clicked} >{txt}</button>
-    </div>
+    </>
   )
 }
