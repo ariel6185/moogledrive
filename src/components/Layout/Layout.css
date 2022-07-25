@@ -32,9 +32,10 @@ header{
 .layout{
     display: flex;
     height: 100%;
+    /* max-width: 100%;
+    justify-content: space-between; */
 }
 nav{
-    /* overflow: hidden hidden; */
     height: calc(100vh - 100px);
     display: flex;
     flex-direction: column;
@@ -48,7 +49,9 @@ nav{
     /* border-left: 1px solid black; */
 }
 main{
-    width: 100%;
+    overflow: hidden;
+   width: 100%;
+   max-width: 100%;
     padding: 30px;
     border-top-right-radius: 5px;
     border:solid black 1px;
@@ -76,6 +79,7 @@ button:hover{
     cursor: pointer;
     color: blueviolet;
     transition: all 100ms ease;
+    z-index: 4;
 }
 .headerlink:hover{
     transform: scale(1.03);

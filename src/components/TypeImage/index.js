@@ -1,4 +1,8 @@
 import React from 'react'
+import {AiFillFolderOpen} from 'react-icons/ai'
+import {GrDocumentTxt} from 'react-icons/gr'
+import {VscJson} from 'react-icons/vsc'
+
 
 export default function TypeImage({type}) {
 
@@ -8,7 +12,10 @@ export default function TypeImage({type}) {
 
   return (
     <>
-    <img src={type} alt={type} id="TypeImage" />
+    {type==="folder" && <AiFillFolderOpen />}
+    {type==="txt" && <GrDocumentTxt />}
+    {type==="json" && <VscJson />}
+    {type==="png" && <img src={require('../../images/png.png')} alt="png" width="20px"  />}
     </>
   )
 }

@@ -9,6 +9,7 @@
     height: 100vh;
     background: rgba(250, 235, 215, 0.5);
     display: flex;
+    z-index: 3;
 }
 .popup-container{
     margin: auto;

@@ -25,12 +25,12 @@ export default function Layout() {
     <Header />
 
     <div className="layout">
-    <Main />
+    <Main path={currentFolder} />
     <Nav />
     </div>
 
     {isAlertPopup && <GenPopup message={isAlertPopup} setMe={setisAlertPopup} />}
-    <EditPopup />
+    {/* <EditPopup /> */}
     <CornerCss />
     
     </renderContext.Provider>

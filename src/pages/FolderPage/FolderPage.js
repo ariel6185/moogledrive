@@ -14,7 +14,8 @@ export default function FolderPage() {
 
     useEffect(()=>{
 
-        fetch("http://localhost:3004/files/",{
+        console.log(currentFolder);
+        fetch("http://localhost:3004/files",{
             method: "PUT",
             body: JSON.stringify({folderName: currentFolder}),
             headers: { "Content-Type": "application/json" }

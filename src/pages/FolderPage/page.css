@@ -1,45 +1,77 @@
-.Folderinnerc{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
-    border-bottom: 1px solid rgba(138, 121, 121, 0.552);
-    
-}
-.Fileinnerc{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
-    
-}
 .containerh{
     font-size:1.2em;
     font-weight: 600
-    
+}
+.Folderinnerc{
+    border-bottom: 1px solid rgba(138, 121, 121, 0.552);
+}
+.Fileinnerc ,.Folderinnerc{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
 }
 .filecard{
     display: flex;
-    /* justify-content: space-around; */
-    align-items: center;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* align-content: center; */
     width: 150px;
     min-width: 150px;
     border: aquamarine 2px solid;
     border-radius: 30px;
     margin: 10px;
-    padding: 5px;
+    padding: 6px 13px 6px 13px;
     background:radial-gradient( rgb(180, 250, 230),rgba(250, 235, 215, 0.3));
     transition: all 100ms ease;
-    
-    
+    /* position: relative; */
+    z-index: 2;
 }
 .filecard:hover{
     transition: all 100ms ;
     transform:scale(1.03);
-    width: fit-content;
     font-weight: 600;
+    /* width: fit-content; */
+}
+.filecard input{
+    width: 80%;
 }
 .filename{
-    width: 80%;
+    width: 70%;
     text-align: center;
+}
+.filename-text, .selection{
     overflow: hidden;
     text-overflow:ellipsis;
+    width: fit-content;
+    max-width:100%;
 }
+.selection {
+    background: rgb(128, 203, 253);
+}
+.input-overlay{
+    position:absolute;
+    z-index: 1;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+}
+.longName{
+    /* border: 1px rgb(254, 242, 242) solid; */
+    border-radius: 3px;
+    background-color: rgb(102, 102, 102);
+    color: rgb(254, 242, 242);
+    font-size: 0.9em;
+    padding: 1px 5px 2px 5px;
+    position:relative;
+    /* bottom:10px; */
+    /* left: -10px; */
+    /* margin-left: -0px; */
+    /* margin-bottom: -155px; */
+    z-index: 2;
+    /* height: fit-content; */
+    width: fit-content;
+    /* align-self: flex-start; */
+}
+
+
